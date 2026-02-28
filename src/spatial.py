@@ -4,6 +4,8 @@ from shapely.geometry import shape as ShapelyShape
 class SpatialObject:
     def __init__(self, geometry_data):
         self.geometry = ShapelyShape(geometry_data)
+    
+    
     def intersects(self, other):
         return self.geometry.intersects(other.geometry)
 
