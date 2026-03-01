@@ -1,18 +1,18 @@
 from spatial import Parcel
 
 def total_active_area(parcels: list) -> float:
-    total = 0
+    total = 0.0
     
     for parcel in parcels:                                  # Repetition
         if parcel.is_active:                                # Selection         
-            total = total + parcel.attributes["area"]
+            total = total + parcel.area()                   # Modified structure
 
     return total
 
 def parcels_above_threshold(parcels: list, threshold: float) -> list:
     result = []
     for parcel in parcels:
-        if parcel.attributes["area"] > threshold:
+        if parcel.area() > threshold:                       # Modified structure 
             result.append(parcel)
         
     return result
